@@ -1,0 +1,111 @@
+.headers on
+
+--Name: Scott Revillar
+--SQL Quiz 2
+-- 1/20/21
+
+
+
+--1. How many seafood products do we have?
+
+select productid, productname from products where categoryid = 8;
+ProductID|ProductName
+10|Ikura
+13|Konbu
+18|Carnarvon Tigers
+30|Nord-Ost Matjeshering
+36|Inlagd Sill
+37|Gravad lax
+40|Boston Crab Meat
+41|Jack's New England Clam Chowder
+45|Rogede sild
+46|Spegesild
+58|Escargots de Bourgogne
+73|Röd Kaviar
+
+
+--12 Seafood products
+
+
+--2. What are the names and IDs of our seafood products?
+
+select productid, productname from products where categoryid = 8;
+ProductID|ProductName
+10|Ikura
+13|Konbu
+18|Carnarvon Tigers
+30|Nord-Ost Matjeshering
+36|Inlagd Sill
+37|Gravad lax
+40|Boston Crab Meat
+41|Jack's New England Clam Chowder
+45|Rogede sild
+46|Spegesild
+58|Escargots de Bourgogne
+73|Röd Kaviar
+
+
+--3. What is the average price of our seafood products?
+
+select avg(unitprice) from products where categoryid = 8;
+avg(unitprice)
+20.6825
+
+
+--4. What is our highest priced seafood product, and how much does it cost?
+
+select productid, productname,unitprice from products where categoryid = 8 order by unitprice desc limit 1;
+ProductID|ProductName|UnitPrice
+18|Carnarvon Tigers|62.5
+
+
+--5. What is our lowest priced seafood product, and how much does it cost?
+
+select productid, productname,unitprice from products where categoryid = 8 order by unitprice asc limit 1;
+ProductID|ProductName|UnitPrice
+13|Konbu|6.0
+
+
+--6. How many customers do we have in Denmark?
+
+select customerid, country from customers where country like 'Denmark';
+CustomerID|Country
+SIMOB|Denmark
+VAFFE|Denmark
+
+
+
+--7. What are the customer names and IDs of our Danish customers?
+
+select customerid, companyname, country from customers where country like 'Denmark';
+CustomerID|CompanyName|Country
+SIMOB|Simons bistro|Denmark
+VAFFE|Vaffeljernet|Denmark
+
+
+--8. Which customers do NOT have a fax number? This one is very tricky!
+
+select customerid, companyname, fax from customers where fax = '';
+CustomerID|CompanyName|Fax
+ANTON|Antonio Moreno Taquería|
+BSBEV|B''s Beverages|
+CHOPS|Chop-suey Chinese|
+COMMI|Comércio Mineiro|
+FAMIA|Familia Arquibaldo|
+FOLKO|Folk och fä HB|
+GODOS|Godos Cocina Típica|
+GOURL|Gourmet Lanchonetes|
+GREAL|Great Lakes Food Market|
+ISLAT|Island Trading|
+KOENE|Königlich Essen|
+LETSS|Let''s Stop N Shop|
+MORGK|Morgenstern Gesundkost|
+PRINI|Princesa Isabel Vinhos|
+QUEEN|Queen Cozinha|
+QUICK|QUICK-Stop|
+RICAR|Ricardo Adocicados|
+RICSU|Richter Supermarkt|
+SAVEA|Save-a-lot Markets|
+THEBI|The Big Cheese|
+TORTU|Tortuga Restaurante|
+WELLI|Wellington Importadora|
